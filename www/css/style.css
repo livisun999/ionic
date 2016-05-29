@@ -1,0 +1,14 @@
+/* Empty. Add your own CSS if you like */
+.text_clock p {
+    font-size: 10px;
+}
+.text_clock {
+    margin-top:60px;
+}
+.div_clock {
+    padding-bottom: 30px;
+    background-color: #F7F7F7;
+}
+.head_list_ h2 {
+    padding-top: 10px;
+}

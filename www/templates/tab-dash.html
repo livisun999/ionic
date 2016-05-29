@@ -1,0 +1,72 @@
+<ion-view view-title="Alarm Clock">
+  <ion-content>
+    <div class="row div_clock">
+      <div class="row row-center">
+        <div class="col col-100 text_clock">
+          <p><ds-widget-clock show-digital theme="blue-light" digital-format="'hh:mm:ss'" ></ds-widget-clock></p>
+          <p><ds-widget-clock show-digital theme="blue-light" digital-format="'d/M/yyyy'" ></ds-widget-clock></p>
+        </div>
+      </div>
+      <div class="col col-40">
+        <div class="col col-offset-50 col-50">
+          <button class="button icon ion-gear-a"></button>
+        </div>
+        <div class="col">
+          <ds-widget-clock show-analog theme="blue-light"></ds-widget-clock>
+        </div>
+      </div>
+    </div>
+    <div class="row col col-100">
+      <div class="col col-100">
+        <ion-list>
+          <ul>
+            <ion-item ng-repeat="contact in contacts">
+              <li class="item item-thumbnail-left" href="#">
+                <img src="img/blue-album.jpg">
+                <div class="row head_list_">
+                  <h2 class="col-60">{{contact.time}}</h2>
+                  <label class="toggle toggle-assertive col-offset-10 col-30">
+                    <input type="checkbox">
+                    <div class="track">
+                      <div class="handle"></div>
+                    </div>
+                  </label>
+                </div>
+                <p>{{contact.A_content}}</p>
+                <p>{{contact.A_day}}</p>
+              </li>
+            </ion-item>
+          </ul>
+        </ion-list>
+      </div>
+    </div>
+    <div class="row row-bottom">
+      <div class="col col-100 col-offset-80">
+        <button class="button icon ion-plus-circled " ng-click="modal.show()"></button>
+      </div>
+    </div>
+    </div>
+  </ion-content>
+  <script id="templates/modal.html" type="text/ng-template">
+    <ion-modal-view>
+      <ion-header-bar class="bar bar-header bar-positive">
+        <h1 class="title">New </h1>
+        <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
+      </ion-header-bar>
+      <ion-content class="padding">
+        <ng-timepicker ng-model="ctrl.time1"></ng-timepicker>
+        <div class="list">
+          <label class="item item-input">
+            <span class="input-label">Time</span>
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Content</span>
+            <input ng-model="newUser.A_content" type="text">
+          </label>
+
+          <button class="button button-full button-positive" ng-click="createContact(newUser)">Create</button>
+        </div>
+      </ion-content>
+    </ion-modal-view>
+  </script>
+</ion-view>
