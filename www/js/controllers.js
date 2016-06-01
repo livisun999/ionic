@@ -1,34 +1,14 @@
 angular.module('starter.controllers', ['ionic','ds.clock','ionic-timepicker'])
 
-.controller('DashCtrl', function($scope) {})
 
-.controller('ChatsCtrl', function($scope, Chats) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
+.controller('SettingController', function($scope, Chats) {
 
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  };
+
+
 })
-
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
-})
-
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
-})
-
 .controller('AlarmController', function($scope, $ionicModal) {
-
+  $scope.show_list = true;
+  
   $scope.contacts = [
     { time: '22:00',
       A_content: 'dậy đi con heo',
@@ -40,6 +20,7 @@ angular.module('starter.controllers', ['ionic','ds.clock','ionic-timepicker'])
     }
   ];
 
+
   $ionicModal.fromTemplateUrl('templates/modal.html', {
     scope: $scope
   }).then(function (modal) {
@@ -50,4 +31,10 @@ angular.module('starter.controllers', ['ionic','ds.clock','ionic-timepicker'])
     $scope.contacts.push({time: u.A_Time, A_content: u.A_content});
     $scope.modal.hide();
   };
+
+  $scope.check_selected_ = function (state) {
+    $scope.show_repeat = state;
+    $scope.show_list = !state;
+  }
 });
+

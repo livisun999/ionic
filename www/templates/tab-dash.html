@@ -9,7 +9,9 @@
       </div>
       <div class="col col-40">
         <div class="col col-offset-50 col-50">
-          <button class="button icon ion-gear-a"></button>
+          <a href="#/tab/setting">
+            <button class="button icon ion-gear-a" ></button>
+          </a>
         </div>
         <div class="col">
           <ds-widget-clock show-analog theme="blue-light"></ds-widget-clock>
@@ -25,7 +27,7 @@
                 <img src="img/blue-album.jpg">
                 <div class="row head_list_">
                   <h2 class="col-60">{{contact.time}}</h2>
-                  <label class="toggle toggle-assertive col-offset-10 col-30">
+                  <label class="toggle toggle-positive col-offset-10 col-30">
                     <input type="checkbox">
                     <div class="track">
                       <div class="handle"></div>
@@ -47,6 +49,7 @@
     </div>
     </div>
   </ion-content>
+
   <script id="templates/modal.html" type="text/ng-template">
     <ion-modal-view>
       <ion-header-bar class="bar bar-header bar-positive">
@@ -56,17 +59,38 @@
       <ion-content class="padding">
         <ng-timepicker ng-model="ctrl.time1"></ng-timepicker>
         <div class="list">
-          <label class="item item-input">
-            <span class="input-label">Time</span>
+          <label class="item item-input" ng-if="show_list">
+            <span class="input-label" >Time</span>
+            <span> --:--</span>
+            <button class="button icon ion-ios-time-outline col-offset-34"> </button>
           </label>
-          <label class="item item-input">
+          <label class="item item-input" ng-if="show_list">
             <span class="input-label">Content</span>
             <input ng-model="newUser.A_content" type="text">
           </label>
 
+          <div class="item item-divider">
+            Repeat
+          </div>
+            <label class="item item-radio">
+              <ion-radio ng-model="one" ng-click="check_selected_(false)" >One</ion-radio>
+              <ion-radio ng-model="repeat_" ng-click="check_selected_(true)">Repear</ion-radio>
+            </label>
+            <label class="item " ng-if="show_repeat">
+              <ion-checkbox ng-model="filter.mon">Mon</ion-checkbox>
+              <ion-checkbox ng-model="filter.tues">Tues</ion-checkbox>
+              <ion-checkbox ng-model="filter.wed">Wed</ion-checkbox>
+              <ion-checkbox ng-model="filter.thurs">Thurs</ion-checkbox>
+              <ion-checkbox ng-model="filter.fri">Fri</ion-checkbox>
+              <ion-checkbox ng-model="filter.sat">Sat</ion-checkbox>
+              <ion-checkbox ng-model="filter.sun">Sun</ion-checkbox>
+            </label>
+          </div>
+          </ion-content>
           <button class="button button-full button-positive" ng-click="createContact(newUser)">Create</button>
-        </div>
+
       </ion-content>
     </ion-modal-view>
   </script>
 </ion-view>
+
