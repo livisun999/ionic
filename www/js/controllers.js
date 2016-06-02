@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['ionic','ds.clock','ionic-timepicker'])
+angular.module('starter.controllers', ['ionic','ds.clock','ionic-timepicker','ion-datetime-picker'])
 
 
 .controller('SettingController', function($scope, Chats) {
@@ -40,5 +40,6 @@ angular.module('starter.controllers', ['ionic','ds.clock','ionic-timepicker'])
     $scope.show_list = !state;
     $scope.show_music = state;
   }
+
 });
 

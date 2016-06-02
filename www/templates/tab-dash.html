@@ -36,6 +36,7 @@
                 </div>
                 <p>{{contact.A_content}}</p>
                 <p>{{contact.A_day}}</p>
+
               </li>
             </ion-item>
           </ul>
@@ -60,8 +61,11 @@
         <ng-timepicker ng-model="ctrl.time1"></ng-timepicker>
         <div class="list">
           <label class="item item-input">
-            <span class="input-label">Date</span>
-            <input type="date">
+            <ion-list>
+              <ion-item ion-datetime-picker ng-model="datetimeValue">
+                {{datetimeValue| date: "yyyy-mm-dd H:mm:ss"}}
+              </ion-item>
+            </ion-list>
           </label>
           <label class="item item-input" ng-if="show_list">
             <span class="input-label">Content</span>
