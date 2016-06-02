@@ -36,5 +36,9 @@ angular.module('starter.controllers', ['ionic','ds.clock','ionic-timepicker'])
     $scope.show_repeat = state;
     $scope.show_list = !state;
   }
+  $scope.check_show_music = function (state){
+    $scope.show_list = !state;
+    $scope.show_music = state;
+  }
 });
 
