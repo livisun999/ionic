@@ -5,6 +5,8 @@
     "ionic": "driftyco/ionic-bower#1.3.1"
   },
   "dependencies": {
-    "ion-datetime-picker": "^0.2.4"
+    "ion-datetime-picker": "^0.2.4",
+    "datepicker-for-ionic": "^1.1.7",
+    "ionic-timepicker": "^0.5.1"
   }
 }

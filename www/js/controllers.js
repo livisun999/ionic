@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['ionic','ds.clock','ionic-timepicker','ion-datetime-picker'])
+angular.module('starter.controllers', ['ionic','ds.clock','ionic-timepicker'])
 
 
 .controller('SettingController', function($scope, Chats) {
@@ -6,9 +6,9 @@ angular.module('starter.controllers', ['ionic','ds.clock','ionic-timepicker','io
 
 
 })
-.controller('AlarmController', function($scope, $ionicModal) {
+.controller('AlarmController', function($scope, $ionicModal, ionicTimePicker) {
   $scope.show_list = true;
-  
+  $scope.time = '--:--';
   $scope.contacts = [
     { time: '22:00',
       A_content: 'dậy đi con heo',
@@ -40,6 +40,22 @@ angular.module('starter.controllers', ['ionic','ds.clock','ionic-timepicker','io
     $scope.show_list = !state;
     $scope.show_music = state;
   }
-
+      $scope.openTimePicker1 = function () {
+        var ipObj1 = {
+          callback: function (val) {      //Mandatory
+            if (typeof (val) === 'undefined') {
+              console.log('Time not selected');
+            } else {
+              var selectedTime = new Date(val * 1000);
+              $scope.time = selectedTime.getUTCHours(), 'H :' + selectedTime.getUTCMinutes(), 'M :';
+              console.log('Selected epoch is : ', val, 'and the time is ', selectedTime.getUTCHours(), 'H :', selectedTime.getUTCMinutes(), 'M');
+            }
+          },
+          inputTime: ((new Date()).getHours() * 60 * 60 + (new Date()).getMinutes() * 60),   //Optional
+          format: 12,         //Optional
+          step: 1,           //Optional
+          setLabel: 'Set'    //Optional
+        };
+        ionicTimePicker.openTimePicker(ipObj1);
+      }
 });
-

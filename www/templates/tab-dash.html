@@ -58,14 +58,12 @@
         <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
       </ion-header-bar>
       <ion-content class="padding">
-        <ng-timepicker ng-model="ctrl.time1"></ng-timepicker>
+        <button class="button button-block button-positive overflowShow" ng-click="openTimePicker1()">
+          {{time}}
+        </button>
         <div class="list">
           <label class="item item-input">
-            <ion-list>
-              <ion-item ion-datetime-picker ng-model="datetimeValue">
-                {{datetimeValue| date: "yyyy-mm-dd H:mm:ss"}}
-              </ion-item>
-            </ion-list>
+
           </label>
           <label class="item item-input" ng-if="show_list">
             <span class="input-label">Content</span>
@@ -90,29 +88,7 @@
                 <button class="button icon ion-checkmark-round col col-50 button-positive" ng-click="check_selected_(false)"> </button>
               </div>
             </label>
-          <label class="item item-button-right" ng-if="show_list">
-            <span class="input-label"> Music</span>
-            <button class=" button icon ion-ios-checkmark-empty"></button>
-          </label>
-            <label class="item" ng-if="show_music">
-              <ion-list>
-              <ion-radio ng-model="music" ng-value="song_ChucBe"> Chuc be ngu ngon</ion-radio>
-              <ion-radio ng-model="music" ng-value="song_EmDi"> Em di xa qua</ion-radio>
-              <ion-radio ng-model="music" ng-value="song_KhongCan"> Khong can phai hua dau em</ion-radio>
-              <ion-radio ng-model="music" ng-value="song_AiLa"> Ai la nguoi anh yeu</ion-radio>
-              <ion-radio ng-model="music" ng-value="song_TuBiet"> Tu biet nhau di</ion-radio>
-              <ion-radio ng-model="music" ng-value="song_GiacMo"> Giac mo trua</ion-radio>
-              <ion-radio ng-model="music" ng-value="song_TrongTim"> Trong tim anh luon co em</ion-radio>
-              <ion-radio ng-model="music" ng-value="song_ChoAnh"> Cho anh trong con mua</ion-radio>
-              <ion-radio ng-model="music" ng-value="song_CoKhong"> Co khong giu, mat dung tim </ion-radio>
-              </ion-list>
-            </label>
-            <label class="item" ng-if="show_music">
-              <div class="row">
-                <button class="button icon ion-close-round col col-50 button-stable" ng-click="check_show_music(false)"> </button>
-                <button class="button icon ion-checkmark-round col col-50 button-positive" ng-click="check_show_music(false)"> </button>
-              </div>
-            </label>
+
 
           </div>
           </ion-content>
