@@ -49,16 +49,33 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
-      .state('tab.setting', {
-        url: '/setting',
+  .state('tab.setting', {
+    url: '/setting',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/tab-setting.html',
+        controller: 'SettingController'
+      }
+    }
+  })
+      .state('tab.repeat',{
+        url:'/repeat',
         views: {
           'tab-dash': {
-            templateUrl: 'templates/tab-chats.html',
-            controller: 'SettingController'
+            templateUrl :'templates/tab-Alarm_repeat.html',
+            //controller: 'RepeatController'
+          }
+        }
+      })
+      .state('tab.newAlarm',{
+        url:'/newAlarm',
+        views: {
+          'tab-dash': {
+            templateUrl :'templates/tab-newAlarm.html',
+            //controller: 'RepeatController'
           }
         }
       });
-  
   
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');

@@ -45,7 +45,9 @@
     </div>
     <div class="row row-bottom">
       <div class="col col-100 col-offset-80">
-        <button class="button icon ion-plus-circled " ng-click="modal.show()"></button>
+        <a href="#/tab/newAlarm">
+          <button class="button icon ion-plus-circled "></button>
+        </a>
       </div>
     </div>
     </div>
@@ -69,27 +71,11 @@
             <span class="input-label">Content</span>
             <input ng-model="newUser.A_content" type="text">
           </label>
-            <label class="item item-radio" ng-if="show_list">
-              <ion-radio ng-model="repeat_" ng-click="check_selected_(true)">Repear</ion-radio>
+            <label class="item item-radio">
+              <a href="#/tab/setting">
+                <button class="button icon ion-gear-a" ></button>
+              </a>
             </label>
-            <label class="item " ng-if="show_repeat">
-              <ion-checkbox ng-model="filter.none">None </ion-checkbox>
-              <ion-checkbox ng-model="filter.mon">Every Monday </ion-checkbox>
-              <ion-checkbox ng-model="filter.tues">Every Tuesday</ion-checkbox>
-              <ion-checkbox ng-model="filter.wed">Every Wednesday</ion-checkbox>
-              <ion-checkbox ng-model="filter.thurs">Every Thursday </ion-checkbox>
-              <ion-checkbox ng-model="filter.fri">Every Friday</ion-checkbox>
-              <ion-checkbox ng-model="filter.sat">Every Saturday</ion-checkbox>
-              <ion-checkbox ng-model="filter.sun">Every Sunday</ion-checkbox>
-            </label>
-            <label class="item" ng-if="show_repeat">
-              <div class="row">
-                <button class="button icon ion-close-round col col-50 button-stable" ng-click="check_selected_(false)"> </button>
-                <button class="button icon ion-checkmark-round col col-50 button-positive" ng-click="check_selected_(false)"> </button>
-              </div>
-            </label>
-
-
           </div>
           </ion-content>
           <button class="button button-full button-positive" ng-click="createContact(newUser)">Create</button>

@@ -47,12 +47,15 @@ angular.module('starter.controllers', ['ionic','ds.clock','ionic-timepicker'])
               console.log('Time not selected');
             } else {
               var selectedTime = new Date(val * 1000);
-              $scope.time = selectedTime.getUTCHours(), 'H :' + selectedTime.getUTCMinutes(), 'M :';
+              var H = selectedTime.getUTCHours().toString();
+              var M =  selectedTime.getUTCMinutes().toString();
+
+              $scope.time = H + " : " + M ;
               console.log('Selected epoch is : ', val, 'and the time is ', selectedTime.getUTCHours(), 'H :', selectedTime.getUTCMinutes(), 'M');
             }
           },
           inputTime: ((new Date()).getHours() * 60 * 60 + (new Date()).getMinutes() * 60),   //Optional
-          format: 12,         //Optional
+          format: 24,         //Optional
           step: 1,           //Optional
           setLabel: 'Set'    //Optional
         };
