@@ -1,9 +1,18 @@
 <ion-view view-title="Account">
   <ion-content>
-    <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>
-    </ion-list>
+    <div class="row">
+      <div class="col col-100">
+        <ion-list>
+          <ion-checkbox ng-model="mon" ng-checked="re_check">Monday</ion-checkbox>
+          <ion-checkbox ng-model="tues" ng-checked="re_check1">Tuesday</ion-checkbox>
+          <ion-checkbox ng-model="wed" ng-checked="re_check2">Wednestday</ion-checkbox>
+          <ion-checkbox ng-model="thurs" ng-checked="re_check3">Thursday</ion-checkbox>
+          <ion-checkbox ng-model="fri" ng-checked="re_check4">Friday</ion-checkbox>
+          <ion-checkbox ng-model="sat" ng-checked="re_check5">Saturday</ion-checkbox>
+          <ion-checkbox ng-model="sun" ng-checked="re_check6">Sunday</ion-checkbox>
+        </ion-list>
+        <a class="button button-block button-positive " href="#/tab/newAlarm "> Choose </a>
+      </div>
+    </div>
   </ion-content>
 </ion-view>

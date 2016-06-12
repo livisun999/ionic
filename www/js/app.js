@@ -63,6 +63,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         views: {
           'tab-dash': {
             templateUrl :'templates/tab-Alarm_repeat.html',
+            controller: 'RepeatController'
+          }
+        }
+      })
+      .state('tab.music',{
+        url:'/music',
+        views: {
+          'tab-dash': {
+            templateUrl :'templates/tab-music.html',
             //controller: 'RepeatController'
           }
         }
@@ -72,7 +81,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         views: {
           'tab-dash': {
             templateUrl :'templates/tab-newAlarm.html',
-            //controller: 'RepeatController'
+            controller: 'NewAlarmController'
           }
         }
       });
