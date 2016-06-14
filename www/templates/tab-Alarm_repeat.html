@@ -2,16 +2,20 @@
   <ion-content>
     <div class="row">
       <div class="col col-100">
+        <label class="item item-icon-left item_bg_color ">
+          <i class="icon ion-calendar item_top_color "></i>
+          <h2 id="list_repeat" ng-model="list_re">: {{mon}} {{tues}} {{wed}} {{thurs}} {{fri}} {{sat}} {{sun}}</h2>
+        </label>
         <ion-list>
-          <ion-checkbox ng-model="mon" ng-checked="re_check">Monday</ion-checkbox>
-          <ion-checkbox ng-model="tues" ng-checked="re_check1">Tuesday</ion-checkbox>
-          <ion-checkbox ng-model="wed" ng-checked="re_check2">Wednestday</ion-checkbox>
-          <ion-checkbox ng-model="thurs" ng-checked="re_check3">Thursday</ion-checkbox>
-          <ion-checkbox ng-model="fri" ng-checked="re_check4">Friday</ion-checkbox>
-          <ion-checkbox ng-model="sat" ng-checked="re_check5">Saturday</ion-checkbox>
-          <ion-checkbox ng-model="sun" ng-checked="re_check6">Sunday</ion-checkbox>
+          <ion-checkbox ng-model="mon" ng-checked="Mon" ng-true-value ="'Mon'"  ng-false-value ="" >Monday</ion-checkbox>
+          <ion-checkbox ng-model="tues" ng-checked="Tues"  ng-true-value ="'Tues'"  ng-false-value ="">Tuesday</ion-checkbox>
+          <ion-checkbox ng-model="wed" ng-checked="Wed"  ng-true-value ="'Wed'"  ng-false-value ="">Wednestday</ion-checkbox>
+          <ion-checkbox ng-model="thurs" ng-checked="Thurs"  ng-true-value ="'Thurs'"  ng-false-value ="">Thursday</ion-checkbox>
+          <ion-checkbox ng-model="fri" ng-checked="Fri"  ng-true-value ="'Fri'"  ng-false-value ="">Friday</ion-checkbox>
+          <ion-checkbox ng-model="sat" ng-checked="Sat"  ng-true-value ="'Sat'"  ng-false-value ="">Saturday</ion-checkbox>
+          <ion-checkbox ng-model="sun" ng-checked="Sun"  ng-true-value ="'Sun'"  ng-false-value ="">Sunday</ion-checkbox>
         </ion-list>
-        <a class="button button-block button-positive " href="#/tab/newAlarm "> Choose </a>
+        <a class="button button-block button-positive " href="#/tab/newAlarm " ng-click="save_alarm_repeat()"> Choose </a>
       </div>
     </div>
   </ion-content>

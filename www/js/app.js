@@ -72,7 +72,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         views: {
           'tab-dash': {
             templateUrl :'templates/tab-music.html',
-            //controller: 'RepeatController'
+            controller: 'MusicController'
           }
         }
       })

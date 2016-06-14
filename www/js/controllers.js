@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['ionic','ds.clock','ionic-timepicker'])
+angular.module('starter.controllers', ['ionic','ds.clock','ionic-timepicker','ngStorage'])
 .controller('SettingController', function($scope, Chats) {
 })
 .controller('AlarmController', function($scope, $ionicModal, ionicTimePicker) {
@@ -15,18 +15,6 @@ angular.module('starter.controllers', ['ionic','ds.clock','ionic-timepicker'])
     }
   ];
 
-
-  //$ionicModal.fromTemplateUrl('templates/modal.html', {
-  //  scope: $scope
-  //}).then(function (modal) {
-  //  $scope.modal = modal;
-  //});
-  //
-  //$scope.createContact = function (u) {
-  //  $scope.contacts.push({time: u.A_Time, A_content: u.A_content});
-  //  $scope.modal.hide();
-  //};
-
   $scope.check_selected_ = function (state) {
     $scope.show_repeat = state;
     $scope.show_list = !state;
@@ -37,7 +25,7 @@ angular.module('starter.controllers', ['ionic','ds.clock','ionic-timepicker'])
   }
 
 })
-    .controller('NewAlarmController', function($scope, $ionicModal, ionicTimePicker) {
+    .controller('NewAlarmController', function($scope, $ionicModal, ionicTimePicker, $rootScope) {
       $scope.time = '--:--';
       $scope.openTimePicker1 = function () {
         var ipObj1 = {
@@ -65,7 +53,7 @@ angular.module('starter.controllers', ['ionic','ds.clock','ionic-timepicker'])
         };
         ionicTimePicker.openTimePicker(ipObj1);
       }
-      $scope.dm = function (){
+      $scope.repeat_check = function (){
         if(!$scope.show_repeat){
           $scope.show_repeat = true;
         }
@@ -74,15 +62,27 @@ angular.module('starter.controllers', ['ionic','ds.clock','ionic-timepicker'])
         }
       }
 
+      // SAVE LOCAL STORAGE
+
     })
-    .controller('RepeatController',function($scope){
-      $scope.re_check = true;
-      $scope.re_check1 = true;
-      $scope.re_check2 = true;
-      $scope.re_check3 = true;
-      $scope.re_check4 = true;
-      $scope.re_check5 = false;
-      $scope.re_check6 = false;
-      
-    });
+    .controller('RepeatController',function($scope, $rootScope){
+
+        $scope.save_alarm_repeat = function (){
+          var a = document.getElementById("list_repeat").innerHTML;
+          var count_ = a.split(" ");
+          console.log(count_);
+          for(var i = 0; i < count_.length; i++){
+            if (count_[i] != "" && count_[i] != ":"){
+                      
+            }
+          }
+          $rootScope.list_repeat_show = a;
+        }
+    })
+    .controller('MusicController', function ($scope, $rootScope) {
+
+    })
+
+
+;
 

@@ -4,14 +4,14 @@
       <div class="col col-100">
         <div class="list list-inset">
           <label class="item item-icon-left item-icon-right" ng-click="openTimePicker1()">
-            <i class="icon ion-ios-alarm"></i>
+            <i class="icon ion-ios-alarm item_top_color"></i>
             <div class="row">
-              <h1 class="text-center col col-90"> {{time}}</h1>
+              <h1 class="text-center col col-90 item_top_color"> {{time}}</h1>
             </div>
           </label>
           <label class="item item-icon-left">
             <div class="row">
-              <i class="icon ion-ios-compose col col-10"></i>
+              <i class="icon ion-ios-compose col col-10 item_top_color"></i>
               <input type="text" placeholder="Comment" class="col col-90">
             </div>
           </label>
@@ -19,11 +19,11 @@
 
         <div class="list list-inset">
           <label class="item item-icon-left">
-            <i class="icon ion-ios-list"></i>
+            <i class="icon ion-ios-list item_top_color"></i>
             <div class="row">
               <h2 class=" col col-80"> Repeat</h2>
               <label class="toggle toggle-positive col col-20">
-                <input type="checkbox" ng-checked="alarm" ng-click="dm()" >
+                <input type="checkbox" ng-checked="alarm" ng-click="repeat_check()" >
                 <div class="track">
                   <div class="handle"></div>
                 </div>
@@ -31,21 +31,21 @@
             </div>
           </label>
           <a class="item item-icon-left item-icon-right" href="#/tab/repeat" ng-if="show_repeat">
-            <i class="icon ion-calendar"></i>
+            <i class="icon ion-calendar item_top_color"></i>
             <div class="row">
-              <h2 class="col col-90">Mon, Tues, Wed, Thur, Fri</h2>
+              <h2 class="col col-90">{{list_repeat_show}}</h2>
               <i class="icon ion-ios-arrow-right col col-10"></i>
             </div>
           </a>
           <a class="item item-icon-left item-icon-right" href="#/tab/music">
-            <i class="icon ion-music-note"></i>
+            <i class="icon ion-music-note item_top_color"></i>
             <div class="row">
-              <h2 class="col col-90"> Chuc be ngu ngon</h2>
+              <h2 class="col col-90"> {{music}} </h2>
               <i class="icon ion-ios-arrow-right col col-10 right"></i>
             </div>
           </a>
           <label class="item item-icon-left item-icon-right">
-            <i class="icon ion-image"></i>
+            <i class="icon ion-image item_top_color"></i>
             <div class="row">
               <div class="item item-image col col-75">
                 <img src="img/blue-album.jpg">
